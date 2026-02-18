@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section id="" class="hero d-flex align-items-center text-white" data-aos="fade-in">
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold">Excellence in Care. Redefined.</h1>
+    <p class="lead mt-3">Premium healthcare experience with world-class specialists and advanced technology.</p>
+    <!-- <a href="#" class="btn btn-gold btn-lg mt-4">Book Appointment</a> -->
+     <a href="#appointment" class="btn btn-warning btn-lg mt-3">Book Appointment</a>
+
+
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-center text-white mb-5 display-5 fw-bold">Our Premium Services</h2>
+    <div class="row g-4">
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card position-relative overflow-hidden rounded-4">
+          <img src="{{ url_for('static', filename='images/cardiologist.jpg') }}" class="img-fluid" alt="Cardiology">
+          <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center p-4">
+            <h3 class="text-gold fw-bold">Cardiology</h3>
+            <p class="text-white">State-of-the-art cardiac care with expert cardiologists and advanced technology.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-card position-relative overflow-hidden rounded-4">
+          <img src="{{ url_for('static', filename='images/neurology.jpg') }}" class="img-fluid" alt="Neurology">
+          <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center p-4">
+            <h3 class="text-gold fw-bold">Neurology</h3>
+            <p class="text-white">Comprehensive neurological care with precision diagnostics and treatment plans.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-card position-relative overflow-hidden rounded-4">
+          <img src="{{ url_for('static', filename='images/surgery1.jpg') }}" class="img-fluid" alt="Surgery">
+          <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center p-4">
+            <h3 class="text-gold fw-bold">Surgery</h3>
+            <p class="text-white">Advanced surgical procedures with precision and post-operative luxury care.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-card position-relative overflow-hidden rounded-4">
+          <img src="{{ url_for('static', filename='images/diagnostics.jpg') }}" class="img-fluid" alt="Diagnostics">
+          <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center p-4">
+            <h3 class="text-gold fw-bold">Advanced Diagnostics</h3>
+            <p class="text-white">High-end diagnostic tools for accurate and early detection of all conditions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Doctors Section -->
+<section id="doctors" class="doctors py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-center text-white mb-5 display-5 fw-bold">Meet Our Specialists</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="doctor-card position-relative text-center bg-dark rounded-4 overflow-hidden shadow-lg">
+          <img src="{{ url_for('static', filename='images/female1.jpeg') }}" class="img-fluid rounded-top-4" alt="Dr. Grace Williams">
+          <div class="p-4">
+            <h4 class="text-gold fw-bold">Dr. Grace Williams</h4>
+            <p class="text-white-50">Cardiologist – Expert in advanced heart treatments and patient-centered care.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="doctor-card position-relative text-center bg-dark rounded-4 overflow-hidden shadow-lg">
+          <img src="{{ url_for('static', filename='images/male.jpg') }}" class="img-fluid rounded-top-4" alt="Dr. Michael Lee">
+          <div class="p-4">
+            <h4 class="text-gold fw-bold">Dr. Michael Lee</h4>
+            <p class="text-white-50">Neurologist – Precision diagnostics and advanced neurological care.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="doctor-card position-relative text-center bg-dark rounded-4 overflow-hidden shadow-lg">
+          <img src="{{ url_for('static', filename='images/female2.jpg') }}" class="img-fluid rounded-top-4" alt="Dr. Sophia Rivera">
+          <div class="p-4">
+            <h4 class="text-gold fw-bold">Dr. Sophia Rivera</h4>
+            <p class="text-white-50">Surgeon – Leading complex surgeries with precision and compassionate care.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Appointment Section -->
+<section id="appointment" class="appointment py-5">
+
+<!-- <section class="appointment py-5" data-aos="fade-up"> -->
+  <div class="container">
+    <h2 class="text-center text-white mb-5 display-5 fw-bold">Book an Appointment</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+<form class="appointment-form p-4 rounded-4 shadow-lg bg-dark" method="POST" action="{{ url_for('appointment') }}">
+  <div class="mb-3">
+    <label for="name" class="form-label text-white">Full Name</label>
+    <input type="text" class="form-control bg-dark text-white border-secondary" id="name" name="name" placeholder="Full name" required>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label text-white">Email Address</label>
+    <input type="email" class="form-control bg-dark text-white border-secondary" id="email" name="email" placeholder="example@email.com" required>
+  </div>
+  <div class="mb-3">
+    <label for="phone" class="form-label text-white">Phone Number</label>
+    <input type="tel" class="form-control bg-dark text-white border-secondary" id="phone" name="phone" placeholder="+234 456 789 1230" required>
+  </div>
+  <div class="mb-3">
+    <label for="department" class="form-label text-white">Select Department</label>
+    <select class="form-select bg-dark text-white border-secondary" id="department" name="department" required>
+      <option value="">Choose...</option>
+      <option>Cardiology</option>
+      <option>Neurology</option>
+      <option>Surgery</option>
+      <option>Advanced Diagnostics</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="date" class="form-label text-white">Preferred Date</label>
+    <input type="date" class="form-control bg-dark text-white border-secondary" id="date" name="date" required>
+  </div>
+  <button type="submit" class="btn btn-gold w-100 mt-3">Book Appointment</button>
+</form>
+{% if request.args.get('success') %}
+<div id="successAlert" class="alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3 shadow-lg success-alert-custom" role="alert">
+    ✅ Appointment booked successfully! We will contact you soon.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<script>
+    // Auto-hide after 4 seconds
+    setTimeout(function() {
+        var alert = document.getElementById('successAlert');
+        if(alert){
+            var bsAlert = bootstrap.Alert.getOrCreateInstance(alert);
+            bsAlert.close();
+        }
+    }, 4000);
+</script>
+{% endif %}
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h5 class="text-gold fw-bold mb-3">About Aurevia</h5>
+        <p class="text-white-50">Aurevia Medical Center delivers world-class healthcare with advanced technology and compassionate care. Excellence in healthcare, redefined.</p>
+      </div>
+      <div class="col-md-4">
+        <h5 class="text-gold fw-bold mb-3">Contact Us</h5>
+        <ul class="list-unstyled text-white-50">
+          <li>📞 +234 811 823 5933</li>
+          <li>✉ info@aureviamedical.com</li>
+          <li>🏥 23 auveria GRA, Ikeja, Lagos</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5 class="text-gold fw-bold mb-3">Follow Us</h5>
+   <div class="d-flex gap-3">
+  
+  <a href="https://www.facebook.com/YourPage" target="_blank" rel="noopener noreferrer" class="text-gold fs-4" title="Facebook">
+    <i class="bi bi-facebook"></i>
+  </a>
+
+   
+  <a href="https://x.com/osetohan" target="_blank" rel="noopener noreferrer" class="text-gold fs-4" title="X">
+    <i class="bi bi-twitter"></i>  
+  </a>
+
+   
+  <a href="https://www.instagram.com/ose.tohan" target="_blank" rel="noopener noreferrer" class="text-gold fs-4" title="Instagram">
+    <i class="bi bi-instagram"></i>
+  </a>
+
+  
+  <a href="https://www.linkedin.com/in/OWOEYE FAVOUR" target="_blank" rel="noopener noreferrer" class="text-gold fs-4" title="LinkedIn">
+    <i class="bi bi-linkedin"></i>
+  </a>
+</div>
+
+
+
+      </div>
+    </div>
+    <hr class="bg-white-25 my-4">
+    <p class="text-center text-white-50 mb-0">&copy; 2026 Aurevia Medical Center. All Rights Reserved.</p>
+  </div>
+</footer>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aurevia Medical Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aurevia Medical Center – Premium healthcare with world-class doctors and advanced technology.">
+    <meta name="keywords" content="hospital, healthcare, doctors, appointment, cardiology, neurology, surgery">
+    <meta name="author" content="Your Name">
+    <title>Aurevia Medical Center</title>
+
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+     
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+ 
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-transparent position-absolute w-100"> -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark position-absolute w-100">
+
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Aurevia</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+       <ul class="navbar-nav ms-auto">
+  <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+  <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+  <li class="nav-item"><a class="nav-link" href="#doctors">Doctors</a></li>
+  <li class="nav-item"><a class="nav-link" href="#appointment">Appointment</a></li>
+</ul>
+
+    </div>
+  </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({duration: 1000, once: true});
+</script>
+
+ 
+<script>
+   // Select the navbar once
+const navbar = document.querySelector('.navbar');
+
+// Add scroll event listener
+window.addEventListener('scroll', () => {
+    // Toggle 'scrolled' class if page is scrolled more than 50px
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+</script>
+
+</body>
+</html>

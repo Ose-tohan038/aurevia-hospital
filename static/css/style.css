@@ -1,0 +1,141 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0B1C2D;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* .navbar {
+    transition: background-color 0.4s ease, padding 0.4s ease;
+}
+.navbar.scrolled {
+    background-color: #0B1C2D !important;
+    padding: 0.5rem 0;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+} */
+.navbar {
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+.navbar.scrolled {
+    background-color: rgba(11,28,45,0.95); /* dark semi-transparent */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;   
+}
+
+ .hero {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(rgba(11, 28, 45, 0.7), rgba(11, 28, 45, 0.7)),
+                url("../images/hospital.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.hero h1 {
+    animation: fadeInDown 1.2s ease-in-out;
+}
+.hero p {
+    animation: fadeInDown 1.4s ease-in-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+.hero a {
+    animation: fadeInDown 1.6s ease-in-out;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.navbar {
+    z-index: 1000;
+}
+
+
+.btn-gold {
+    background-color: #C6A75E;
+    color: #0B1C2D;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.btn-gold:hover {
+    background-color: #b8964f;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Services */
+.services {
+    background-color: #0B1C2D;
+}
+.service-card img {
+    transition: transform 0.5s ease;
+}
+.service-card:hover img {
+    transform: scale(1.1);
+}
+.overlay {
+    background: rgba(11,28,45,0.7);
+    transition: background 0.3s ease;
+}
+.service-card:hover .overlay {
+    background: rgba(11,28,45,0.5);
+}
+.text-gold { color: #C6A75E; }
+
+/* Doctors */
+.doctors { background-color: #0B1C2D; }
+.doctor-card img { transition: transform 0.5s ease; }
+.doctor-card:hover img { transform: scale(1.05); }
+.shadow-lg { box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.6) !important; }
+
+/* Appointment */
+.appointment { background-color: #0B1C2D; }
+.appointment-form input,
+.appointment-form select { border-radius: 0.5rem; padding: 12px 15px; }
+.appointment-form input:focus,
+.appointment-form select:focus {
+    box-shadow: 0 0 0 0.2rem rgba(198,167,94,0.5);
+    border-color: #C6A75E;
+    outline: none;
+}
+.appointment-form label { font-weight: 500; }
+
+/* Footer */
+.footer { background-color: #0B1C2D; }
+.footer a { text-decoration: none; transition: color 0.3s ease; }
+.footer a:hover { color: #b8964f; }
+.footer hr { opacity: 0.25; }
